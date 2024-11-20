@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Entresto sesión 8</title>
+
+		<link rel="stylesheet" href="./css/styles421.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+		<!-- Scripts -->
+		<script src="./js/jquery-3.2.1.min.js"></script>
+		<script src="./js/functions.js"></script>
+	</head>
+	<body class="ancho">
+		<div class="container">
+			<img
+				src="./imagenes/portada421.jpg"
+				alt="Portada"
+				class="cover-image" />
+
+			<a href="./index.html" class="boton-home"></a>
+			<a href="./index420.html" class="boton-atras"></a>
+			<a href="./index422.html" class="boton-next"></a>
+
+			<div class="vutom-col"></div>
+
+			<div
+				class="boton-play circle cursor animate__animated animate__pulse animate__infinite">
+				<img src="./imagenes/edad1.png" alt="" />
+			</div>
+
+			<div
+				class="boton-play2 circle1 cursor animate__animated animate__pulse animate__infinite">
+				<img src="./imagenes/edad2.png" alt="" />
+			</div>
+
+			<div
+				class="boton-play3 circle2 cursor animate__animated animate__pulse animate__infinite">
+				<img src="./imagenes/edad3.png" alt="" />
+			</div>
+
+			<div
+				class="boton-play4 circle3 cursor animate__animated animate__pulse animate__infinite">
+				<img src="./imagenes/edad4.png" alt="" />
+			</div>
+
+			<div
+				class="boton-play5 circle5 cursor animate__animated animate__pulse animate__infinite">
+				<img src="./imagenes/edad5.png" alt="" />
+			</div>
+
+			<div
+				class="boton-play6 circle6 cursor animate__animated animate__pulse animate__infinite">
+				<img src="./imagenes/edad6.png" alt="" />
+			</div>
+
+			<div
+				class="boton-play7 circle7 cursor animate__animated animate__pulse animate__infinite">
+				<img src="./imagenes/edad7.png" alt="" />
+			</div>
+
+			<div class="openModal"></div>
+			<!-- modal -->
+			<div class="modal" style="display: none; height: 100%">
+				<img src="./imagenes/pop-1.jpg" class="ancho" id="image" />
+				<div class="closeModal"></div>
+			</div>
+
+			<div class="openModal1"></div>
+			<!-- modal -->
+			<div class="modal1" style="display: none; height: 100%">
+				<img src="./imagenes/pop-2.jpg" class="ancho" id="image" />
+				<div class="closeModal1"></div>
+			</div>
+
+			<div class="openModal2"></div>
+			<!-- modal -->
+			<div class="modal2" style="display: none; height: 100%">
+				<img src="./imagenes/pop-3.jpg" class="ancho" id="image" />
+				<div class="closeModal2"></div>
+			</div>
+
+			<div class="openModal3"></div>
+			<!-- modal -->
+			<div class="modal3" style="display: none; height: 100%">
+				<img src="./imagenes/pop-5.jpg" class="ancho" id="image" />
+				<div class="closeModal3"></div>
+			</div>
+
+			<div class="openModal4"></div>
+			<!-- modal -->
+			<div class="modal4" style="display: none; height: 100%">
+				<img src="./imagenes/pop-4.jpg" class="ancho" id="image" />
+				<div class="closeModal4"></div>
+			</div>
+
+			<div class="openModal5"></div>
+			<!-- modal -->
+			<div class="modal5" style="display: none; height: 100%">
+				<img src="./imagenes/pop-6.jpg" class="ancho" id="image" />
+				<div class="closeModal5"></div>
+			</div>
+
+			<div class="openModal6"></div>
+			<!-- modal -->
+			<div class="modal6" style="display: none; height: 100%">
+				<img src="./imagenes/pop-7.jpg" class="ancho" id="image" />
+				<div class="closeModal6"></div>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+
+		<script src="./js/script421.js"></script>
+		<script>
+			const slide = [
+				'slide421-1',
+				'slide421-2',
+				'slide421-3',
+				'slide421-4',
+				'slide421-5',
+				'slide421-6',
+				'slide421-7',
+			]
+			$(document).ready(function () {
+				const newSlide = slide.every((item) => {
+					if (localStorage.getItem(item) === 'true') return item
+				})
+				if (newSlide) {
+					$('.vutom-col').hide()
+				} else {
+					$('.vutom-col').show()
+				}
+
+				for(let i = 0; i < 7; i++){
+					if(localStorage.getItem(slide[i]) === 'true') {
+						if(i === 0) {
+							$(`.boton-play`).hide()
+						} else {
+							$(`.boton-play${i+1}`).hide()
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
